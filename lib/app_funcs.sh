@@ -1,13 +1,19 @@
 function restore_app() {
+  output_section "RESTORING CACHE"
   if [ -d $(deps_backup_path) ]; then
     mkdir -p ${build_path}/deps
     cp -pR $(deps_backup_path)/* ${build_path}/deps
+    echo "Contents of the deps dir:"
+    echo "$(ls ${build_path}/deps)"
   fi
 
   if [ $erlang_changed != true ] && [ $elixir_changed != true ]; then
     if [ -d $(build_backup_path) ]; then
       mkdir -p ${build_path}/_build
       cp -pR $(build_backup_path)/* ${build_path}/_build
+
+      echo "Contents of the _build dir:"
+      echo "$(ls ${build_path}/_build)"
     fi
   fi
 }
