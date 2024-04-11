@@ -95,7 +95,7 @@ function set_mtimes() {
   echo $PATH
   cd $build_path
 
-  git restore-mtime
+  ${build_pack_path}/lib/git-restore-mtime
 
   cd - > /dev/null
 }
