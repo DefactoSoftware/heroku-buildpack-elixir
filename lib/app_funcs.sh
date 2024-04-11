@@ -92,6 +92,8 @@ function backup_app() {
 }
 
 function set_mtimes() {
+  echo $PATH
+
   git restore-mtime
 }
 
