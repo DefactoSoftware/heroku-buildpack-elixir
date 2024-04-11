@@ -93,8 +93,11 @@ function backup_app() {
 
 function set_mtimes() {
   echo $PATH
+  cd $build_path
 
   git restore-mtime
+
+  cd - > /dev/null
 }
 
 function compile_app() {
