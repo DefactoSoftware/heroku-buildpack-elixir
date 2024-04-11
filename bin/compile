@@ -56,6 +56,7 @@ app_dependencies
 copy_hex
 
 hook_pre_compile
+set_mtimes
 compile_app
 hook_post_compile
 

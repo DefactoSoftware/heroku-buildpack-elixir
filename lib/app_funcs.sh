@@ -91,6 +91,9 @@ function backup_app() {
   cp -pR ${build_path}/_build/* $(build_backup_path)
 }
 
+function set_mtimes() {
+  git restore-mtime
+}
 
 function compile_app() {
   local git_dir_value=$GIT_DIR
